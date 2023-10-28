@@ -27,7 +27,7 @@
 		}
 
 		// Query database for all rows in the table
-		$sql = "SELECT * FROM employees.employees";
+		$sql = "SELECT * FROM employees";
 		$result = $conn->query($sql);
 
 
