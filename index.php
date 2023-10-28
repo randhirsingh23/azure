@@ -6,6 +6,11 @@
 <body>
 	<h1>MySQL Table Viewer</h1>
 	<?php
+
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
+		error_reporting(E_ALL);
+
 		// Database connection variables
 		$servername = "serverdatabase.mysql.database.azure.com";
 		$username = "dbadmin@serverdatabase";
