@@ -6,14 +6,18 @@
 <body>
 	<h1>MySQL Table Viewer</h1>
 	<?php
+			echo "starting php";
+
 		// Define database connection variables
 		$servername = "serverdatabase.mysql.database.azure.com";
 		$username = "dbadmin";
 		$password = "P@ssword1234";
 		$dbname = "employees";
+			echo "before conn";
 
 		// Create database connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
+			echo "after conn";
 
 		// Check connection
 		if ($conn->connect_error) {
@@ -25,7 +29,6 @@
 		// Query database for all rows in the table
 		$sql = "SELECT * FROM employees.employees";
 		$result = $conn->query($sql);
-			echo "Hello";
 
 
 		if ($result->num_rows > 0) {
