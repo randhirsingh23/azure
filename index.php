@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>MySQL Table Viewer</title>
-</head>
-<body>
-	<h1>MySQL Table Viewer</h1>
-	<?php
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);
+<?php
 
-		// Database connection variables
-		$servername = "serverdatabase.mysql.database.azure.com";
-		$username = "dbadmin@serverdatabase";
-		$password = "P@ssword1234";
-		$dbname = "mysql";
+$con = mysqli_connect("serverdatabase.mysql.database.azure.com", "dbadmin", "P@ssword1234", "employees");
 
-		// Create database connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
+if (mysqli_connect_errno()) {
 
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
+    printf("connection failed: %s\n", mysqli_connect_error());
+    exit();
+}
 
-		echo "0 results";
+$query = "SELECT VERSION()";
 
-		// Close database connection
-		$conn->close();
-	?>
-</body>
-</html>
+$res = mysqli_query($con, $query);
+
+if ($res) {
+
+    $row = mysqli_fetch_row($res);
+    echo $row[0];
+}
+
+mysqli_free_result($res);
+mysqli_close($con);
