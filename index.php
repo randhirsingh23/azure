@@ -1,22 +1,10 @@
 <?php
+$conn = new mysqli("serverdatabase.mysql.database.azure.com", "dbadmin@serverdatabase", "P@ssword1234", "employees");
 
-$con = mysqli_connect("serverdatabase.mysql.database.azure.com", "dbadmin", "P@ssword1234", "sys");
-
-if (mysqli_connect_errno()) {
-
-    printf("connection failed: %s\n", mysqli_connect_error());
-    exit();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} else {
+    echo "Connected successfully";
 }
-
-$query = "SELECT VERSION()";
-
-$res = mysqli_query($con, $query);
-
-if ($res) {
-
-    $row = mysqli_fetch_row($res);
-    echo $row[0];
-}
-
-mysqli_free_result($res);
-mysqli_close($con);
+$conn->close();
+?>
