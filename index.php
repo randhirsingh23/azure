@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("serverdatabase.mysql.database.azure.com", "dbadmin", "P@ssword1234", "employees");
+$con = mysqli_connect("serverdatabase.mysql.database.azure.com", "dbadmin", "P@ssword1234", "sys");
 
 if (mysqli_connect_errno()) {
 
