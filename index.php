@@ -6,6 +6,7 @@
 <body>
 	<h1>MySQL Table Viewer</h1>
 	<?php
+echo "Inside PHP";
 		// Define database connection variables
 		$servername = "serverdatabase.mysql.database.azure.com";
 		$username = "dbadmin";
