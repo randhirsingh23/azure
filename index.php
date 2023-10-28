@@ -14,7 +14,7 @@
 		$servername = "serverdatabase.mysql.database.azure.com";
 		$username = "dbadmin@serverdatabase";
 		$password = "P@ssword1234";
-		$dbname = "employees";
+		$dbname = "mysql";
 
 		// Create database connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
