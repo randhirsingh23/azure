@@ -25,6 +25,8 @@
 		// Query database for all rows in the table
 		$sql = "SELECT * FROM employees.employees";
 		$result = $conn->query($sql);
+			echo "Hello";
+
 
 		if ($result->num_rows > 0) {
 			// Display table headers
