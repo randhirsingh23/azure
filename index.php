@@ -26,7 +26,7 @@
 		}
 
 		// Query database for selected columns in the table
-		$sql = "SELECT emp_no, first_name, email_id FROM employees";
+		$sql = "SELECT emp_no, first_name, email_id FROM employees LIMIT 10";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
