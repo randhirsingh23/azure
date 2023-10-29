@@ -1,5 +1,5 @@
 <?php
-$servername = "gl-emp-web-app2-server";
+$servername = "gl-emp-web-app2-server.mysql.database.azure.com";
 $username = "weqtspfrhk";
 $password = "5C3E3MLM810T05FY$";
 $database = "employees_db";
