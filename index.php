@@ -1,7 +1,7 @@
 <?php
-$servername = "gl-emp-web-app2-server.mysql.database.azure.com";
-$username = "weqtspfrhk";
-$password = "5C3E3MLM810T05FY$";
+$servername = "empdbserver2023.mysql.database.azure.com";
+$username = "dbadmin";
+$password = "P@ssword1234";
 $database = "employees_db";
 
 // Create connection
