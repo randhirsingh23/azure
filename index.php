@@ -1,12 +1,21 @@
 <?php
-$conn = mysqli_init();
-mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
-mysqli_real_connect($conn, 'empdbserver2023.mysql.database.azure.com', 'dbadmin@empdbserver2023', 'P@ssword1234', 'employees_db', 3306, MYSQLI_CLIENT_SSL);
+$servername = "gl-emp-web-app2-server";
+$username = "weqtspfrhk";
+$password = "5C3E3MLM810T05FY$";
+$database = "employees_db";
 
-if (mysqli_connect_errno()) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+echo "Connected to the database successfully!";
+
+// Perform database operations here...
+
+// Close the connection
 $conn->close();
 ?>
-
-
