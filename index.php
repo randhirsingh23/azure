@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 // Perform database operations here...
 		if ($result->num_rows > 0) {
 		    // Display table headers
-		    echo "<table border="1"><tr><th>emp_no</th><th>first_name</th><th>email_id</th></tr>";
+		    echo "<table><tr><th>emp_no</th><th>first_name</th><th>email_id</th></tr>";
 		    // Loop through results and display each row in the table
 		    while($row = $result->fetch_assoc()) {
 		        echo "<tr><td>" . $row["emp_no"] . "</td><td>" . $row["first_name"] . "</td><td>" . $row["email_id"] . "</td></tr>";
