@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $sql = "SELECT emp_no, first_name, email_id FROM employees LIMIT 10";
 $result = $conn->query($sql);
 
-echo "Connected to the database successfully!";
+// echo "Connected to the database successfully!";
 
 // Perform database operations here...
 		if ($result->num_rows > 0) {
