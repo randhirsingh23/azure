@@ -1,44 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>MySQL Table Viewer</title>
-</head>
-<body>
-	<h1>MySQL Table Viewer</h1>
-	<?php
+<?php
+$servername = "empdbserver2023.mysql.database.azure.com";
+$username = "dbadmin";
+$password = "P@ssword1234";
+$database = "employees_db";
 
-		// Database connection variables
-		$servername = "empdbserver2023.mysql.database.azure.com";
-		$username = "dbadmin";
-		$password = "P@ssword1234";
-		$database = "employees_db";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
 
-		// Create database connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-		// Check connection
-		if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		}
+echo "Connected to the database successfully!";
 
-		// Query database for selected columns in the table
-		$sql = "SELECT emp_no, first_name, email_id FROM employees LIMIT 10";
-		$result = $conn->query($sql);
+// Perform database operations here...
 
-		if ($result->num_rows > 0) {
-		    // Display table headers
-		    echo "<table><tr><th>emp_no</th><th>first_name</th><th>email_id</th></tr>";
-		    // Loop through results and display each row in the table
-		    while($row = $result->fetch_assoc()) {
-		        echo "<tr><td>" . $row["emp_no"] . "</td><td>" . $row["first_name"] . "</td><td>" . $row["email_id"] . "</td></tr>";
-		    }
-		    echo "</table>";
-		} else {
-		    echo "0 results";
-		}
-
-		// Close database connection
-		$conn->close();
-	?>
-</body>
-</html>
+// Close the connection
+$conn->close();
+?>
