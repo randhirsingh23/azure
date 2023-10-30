@@ -12,6 +12,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Query database for selected columns in the table
+$sql = "SELECT emp_no, first_name, email_id FROM employees LIMIT 10";
+$result = $conn->query($sql);
+
 echo "Connected to the database successfully!";
 
 // Perform database operations here...
