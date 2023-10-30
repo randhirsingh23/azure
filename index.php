@@ -13,23 +13,29 @@ if ($conn->connect_error) {
 }
 
 // Query database for selected columns in the table
-$sql = "SELECT emp_no, first_name, email_id FROM employees LIMIT 10";
+$sql = "SELECT emp_no, first_name, email_id FROM employees";
 $result = $conn->query($sql);
 
 echo "Connected to the database successfully!";
 
 // Perform database operations here...
-		if ($result->num_rows > 0) {
-		    // Display table headers
-		    echo "<table><tr><th>emp_no</th><th>first_name</th><th>email_id</th></tr>";
-		    // Loop through results and display each row in the table
-		    while($row = $result->fetch_assoc()) {
-		        echo "<tr><td>" . $row["emp_no"] . "</td><td>" . $row["first_name"] . "</td><td>" . $row["email_id"] . "</td></tr>";
-		    }
-		    echo "</table>";
-		} else {
-		    echo "0 results";
-		}
+if ($result->num_rows > 0) {
+    // Display table headers
+    echo "<table border="1"><tr><th>emp_no</th><th>first_name</th><th>email_id</th></tr>";
+    // Loop through results and display each row in the table
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>" .
+            $row["emp_no"] .
+            "</td><td>" .
+            $row["first_name"] .
+            "</td><td>" .
+            $row["email_id"] .
+            "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
 
 // Close the connection
 $conn->close();
